@@ -1,0 +1,6 @@
+use_frameworks!
+target 'WolfLorem_Tests' do
+  pod 'WolfLorem', :path => '../'
+  
+  
+end
