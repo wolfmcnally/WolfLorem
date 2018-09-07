@@ -1,0 +1,6 @@
+framework module WolfNumerics {
+  umbrella header "WolfNumerics-umbrella.h"
+
+  export *
+  module * { export * }
+}

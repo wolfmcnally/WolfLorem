@@ -1,0 +1,6 @@
+framework module WolfLorem {
+  umbrella header "WolfLorem-umbrella.h"
+
+  export *
+  module * { export * }
+}

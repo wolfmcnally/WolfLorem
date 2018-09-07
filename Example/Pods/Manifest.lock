@@ -1,0 +1,23 @@
+PODS:
+  - WolfLorem (0.1.0):
+    - WolfNumerics
+  - WolfNumerics (1.0)
+
+DEPENDENCIES:
+  - WolfLorem (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - WolfNumerics
+
+EXTERNAL SOURCES:
+  WolfLorem:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WolfLorem: 0d149bd53f10cd5488203c0854e577a952cb2e3c
+  WolfNumerics: ddefcf8c7afc0d5ce3aa1aee76b8226c055831f6
+
+PODFILE CHECKSUM: 80a16a086bd3ce757690fc01d74dfc3e93294c4e
+
+COCOAPODS: 1.6.0.beta.1

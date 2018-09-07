@@ -1,13 +1,13 @@
 # WolfLorem
 
-[![CI Status](https://img.shields.io/travis/ironwolf/WolfLorem.svg?style=flat)](https://travis-ci.org/ironwolf/WolfLorem)
+[![CI Status](https://img.shields.io/travis/wolfmcnally/WolfLorem.svg?style=flat)](https://travis-ci.org/wolfmcnally/WolfLorem)
 [![Version](https://img.shields.io/cocoapods/v/WolfLorem.svg?style=flat)](https://cocoapods.org/pods/WolfLorem)
 [![License](https://img.shields.io/cocoapods/l/WolfLorem.svg?style=flat)](https://cocoapods.org/pods/WolfLorem)
 [![Platform](https://img.shields.io/cocoapods/p/WolfLorem.svg?style=flat)](https://cocoapods.org/pods/WolfLorem)
 
-## Example
+## About
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+WolfLorem contains functions to generate random placeholders and dummy data in the style of Lorem Ipsum. Not just sentences, but words, paragraphs, male or female proper names, screen names, titles, phone numbers, email addresses, tweets, dates in the past or future, record IDs, UUIDs, passwords, avatar URLs, image URLs, and more. Very useful during development!
 
 ## Requirements
 
@@ -22,7 +22,7 @@ pod 'WolfLorem'
 
 ## Author
 
-ironwolf, wolf@wolfmcnally.com
+Wolf McNally, wolf@wolfmcnally.com
 
 ## License
 
