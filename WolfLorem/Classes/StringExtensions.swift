@@ -3,7 +3,6 @@
 //  WolfLorem
 //
 //  Created by Wolf McNally on 9/6/18.
-//  Copyright © 2018 Wolf McNally.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +25,7 @@
 import Foundation
 
 extension String {
-    public func capitalizedFirstCharacter() -> String {
+    func capitalizedFirstCharacter() -> String {
         let first = String(self.first!).capitalized
         let rest = self.dropFirst()
         return first + rest
