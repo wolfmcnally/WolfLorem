@@ -168,7 +168,7 @@ public class Lorem {
     }
 
     public static func name() -> String {
-        return "\(firstName) \(lastName)"
+        return "\(firstName()) \(lastName())"
     }
 
     public static func email(firstName: String? = nil, lastName: String? = nil) -> String {
