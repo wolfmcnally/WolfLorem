@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfLorem'
-    s.version          = '1.0.1'
+    s.version          = '1.0.2'
     s.summary          = 'Functions to generate random placeholders in the style of Lorem Ipsum.'
 
     s.description      = <<-DESC
