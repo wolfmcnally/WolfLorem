@@ -42,7 +42,7 @@ public class Lorem {
 
     public static func word(emojisFrac: Frac = 0) -> String {
         guard Double.randomFrac() > emojisFrac else { return emoji() }
-        return allWords.randomElement()
+        return allWords.randomChoice()
     }
 
     public static func words(_ count: Int, emojisFrac: Frac = 0) -> String {
@@ -58,7 +58,7 @@ public class Lorem {
     ]
 
     private static func sentenceEnd() -> Separator {
-        return sentenceEnds.randomElement()
+        return sentenceEnds.randomChoice()
     }
 
     public static func sentence(emojisFrac: Frac = 0) -> String {
@@ -103,7 +103,7 @@ public class Lorem {
     }
 
     public static func emoji() -> String {
-        return String(allEmoji.randomElement())
+        return String(allEmoji.randomChoice())
     }
 
     public static func emojis(_ count: Int) -> String {
@@ -111,11 +111,11 @@ public class Lorem {
     }
 
     public static func organizationSuffix() -> String {
-        return allOrganizationSuffixes.randomElement()
+        return allOrganizationSuffixes.randomChoice()
     }
 
     public static func phoneNumber() -> String {
-        let format: String = phoneFormats.randomElement()
+        let format: String = phoneFormats.randomChoice()
         var s = ""
         for c in Array(format) {
             if c == "#" {
@@ -144,15 +144,15 @@ public class Lorem {
     }
 
     public static func femaleFirstName() -> String {
-        return femaleFirstNames.randomElement()
+        return femaleFirstNames.randomChoice()
     }
 
     public static func maleFirstName() -> String {
-        return maleFirstNames.randomElement()
+        return maleFirstNames.randomChoice()
     }
 
     public static func firstName() -> String {
-        return firstNames.randomElement()
+        return firstNames.randomChoice()
     }
 
     public static func givenName() -> String {
@@ -160,7 +160,7 @@ public class Lorem {
     }
 
     public static func lastName() -> String {
-        return lastNames.randomElement()
+        return lastNames.randomChoice()
     }
 
     public static func familyName() -> String {
@@ -172,20 +172,20 @@ public class Lorem {
     }
 
     public static func email(firstName: String? = nil, lastName: String? = nil) -> String {
-        let delimiter: String = emailDelimiters.randomElement()
-        let domain: String = emailDomains.randomElement()
+        let delimiter: String = emailDelimiters.randomChoice()
+        let domain: String = emailDomains.randomChoice()
         let fn = firstName ?? self.firstName()
         let ln = lastName ?? self.lastName()
         return "\(fn)\(delimiter)\(ln)@\(domain)".lowercased()
     }
 
     public static func url() -> URL {
-        let domain: String = domains.randomElement()
+        let domain: String = domains.randomChoice()
         return URL(string: "http://\(domain))/")!
     }
 
     public static func tweet() -> String {
-        return tweets.randomElement()
+        return tweets.randomChoice()
     }
 
     public static func pastDate() -> Date {
@@ -211,7 +211,7 @@ public class Lorem {
     }
 
     public static func imageURL() -> URL {
-        return URL(string: imageURLs.randomElement())!
+        return URL(string: imageURLs.randomChoice())!
     }
 
     private static func _avatarURL(type: String) -> URL {
@@ -236,10 +236,10 @@ public class Lorem {
         let digits = "0123456789"
         let symbols = "!@#$%^&*-_=+"
         var result = randomCount(in: 6...12).reduce("") { (result, _) in
-            return result + String(alphabet.randomElement())
+            return result + String(alphabet.randomChoice())
         }
-        result.insert(digits.randomElement(), at: randomInsertionPoint(in: result))
-        result.insert(symbols.randomElement(), at: randomInsertionPoint(in: result))
+        result.insert(digits.randomChoice(), at: randomInsertionPoint(in: result))
+        result.insert(symbols.randomChoice(), at: randomInsertionPoint(in: result))
         return result
     }
 
@@ -250,7 +250,7 @@ public class Lorem {
     public static func alphanumericRecordID() -> String {
         let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
         return randomCount(in: 4...8).reduce("") { (result, _) in
-            return result + String(alphabet.randomElement())
+            return result + String(alphabet.randomChoice())
         }
     }
 
@@ -265,7 +265,7 @@ public class Lorem {
     public static func letters(_ count: Int) -> String {
         let alphabet = Array("abcdefghijklmnopqrstuvwxyz")
         return (0 ..< count).reduce("") { result, _ in
-            result + String(alphabet.randomElement())
+            result + String(alphabet.randomChoice())
         }
     }
 

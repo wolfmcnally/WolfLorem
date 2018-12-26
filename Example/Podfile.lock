@@ -1,7 +1,7 @@
 PODS:
-  - WolfLorem (1.0.3):
+  - WolfLorem (1.0.4):
     - WolfNumerics
-  - WolfNumerics (1.0.3)
+  - WolfNumerics (3.0.0)
 
 DEPENDENCIES:
   - WolfLorem (from `../`)
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WolfLorem: 3689d71ce1541befbde6963cefe52a5c6b40086c
-  WolfNumerics: aac52cdac131f4d54c9f09479156a5cf016ab62f
+  WolfLorem: b6e3f9588092104725b61e564a4b57fc6f587f52
+  WolfNumerics: 073642f01957a5602df21531e8b2fd31e8b92042
 
 PODFILE CHECKSUM: 80a16a086bd3ce757690fc01d74dfc3e93294c4e
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.6.0.beta.2
