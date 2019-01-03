@@ -371,4 +371,32 @@ public class Lorem {
         "https://s-media-cache-ak0.pinimg.com/736x/b3/cb/a5/b3cba5d6b7d7b7013a0e282a8dbbc607.jpg", // parkes juggler
         "https://s-media-cache-ak0.pinimg.com/736x/c7/65/0a/c7650affd2fa0d4e2cda5128a2275976.jpg" // parkes gargoyle
     ]
+
+    private static let colors = "red orange yellow green blue violet purple gray black white brown cyan magenta silver gold mahogany chestnut tangerine sepia copper tan peach goldenrod aquamarine turquoise cerulean periwinkle indigo fuchsia pink maroon mauve scarlet".components(separatedBy: " ")
+    private static let animals = "alligator ant bear bee bird camel cat cheetah chicken chimpanzee cow crocodile deer dog dolphin duck eagle elephant fish fly fox frog giraffe goat goldfish hamster hippopotamus horse kangaroo kitten lion lobster monkey octopus owl panda pig puppy rabbit rat scorpion seal shark sheep snail snake spider squirrel tiger turtle wolf zebra".components(separatedBy: " ")
+    private static let adjectives = "droit amatory animistic arcadian baleful bellicose bilious boorish calamitous caustic cerulean comely concomitant contumacious corpulent crapulous defamatory didactic dilatory dowdy efficacious effulgent egregious endemic equanimous execrable fastidious feckless fecund friable fulsome garrulous gustatory heuristic incendiary insidious insolent intransigent inveterate invidious irksome jejune jocular judicious lachrymose limpid loquacious luminous mannered mendacious meretricious minatory mordant munificent nefarious noxious parsimonious pendulous pernicious pervasive petulant precipitate propitious puckish querulous quiescent rebarbative recalcitrant redolent risible ruminate sagacious salubrious sartorial sclerotic serpentine spasmodic strident taciturn tenacious tremulous trenchant turbulent turgid ubiquitous uxorious verdant voluble voracious wheedling withered alert able acceptable accurate ample angry agile amused aromatic austere brisk bulky busy beautiful blind bouncy brave big blissful bold brilliant charming cheery clever courteous cultured calm careless costly crafty cuddly cute carefree cheerful colossal complex corageous crazy dapper deadly decisive dazzling deep defiant devoted dangerous delightful diligent disguised dramatic dutiful earnest elaborate energetic enraged esteemed excellent exciting exotic eager eminent elated elegant envious euphoric fabulous flashy flawless flippant fragrant frugal fussy fearless flowery frivolous frosty famous feisty flamboyant fluffy fortunate friendly funny generous giant gracious grumpy gentle glorious gregarious gleaming gullible hefty honorable huge harmless hilarious humble honest hungry imaginary imperfect intrepid important incredible impeccable infamous innocent jealous joyous jovial jubilant kind kooky keen limping lovely loyal luminous lucky likable lustrous majestic modern miniature marvelous naive needy naughty noisy nervious nutty obedient ornery opulant ornate passionate perfumed proper playful pleasing proud perky pesky popular powerful pretty prudent puzzling quaint quick quirky radiant regal ragged reckless robust sad sardonic satisfied sparkling shy shiny smart sneaky sociable strange subtle striped swift talkative tender tricky trusting testy thoughtful trusty unique upbeat uncommon vibrant virtuous vigorous vapid vivacious weighty worthwhile worn wretched weird winged witty worthy warm wild wet wiry wrathful yawning young youthful zany zealous zesty".components(separatedBy: " ")
+
+    public static func color() -> String {
+        return colors.randomChoice()
+    }
+
+    public static func animal() -> String {
+        return animals.randomChoice()
+    }
+
+    public static func adjective() -> String {
+        return adjectives.randomChoice()
+    }
+
+    public static func adjectiveOrColor() -> String {
+        return Bool.random() ? adjective() : color()
+    }
+
+    public static func codeName() -> String {
+        return [adjectiveOrColor(), animal()].joined(separator: " ")
+    }
+
+    public static func longCodeName() -> String {
+        return [adjective(), color(), animal()].joined(separator: " ")
+    }
 }
