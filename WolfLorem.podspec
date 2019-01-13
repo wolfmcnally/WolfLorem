@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'WolfLorem'
-    s.version          = '1.1.0'
+    s.version          = '1.1.1'
     s.summary          = 'Functions to generate random placeholders in the style of Lorem Ipsum.'
 
     s.description      = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     s.author           = { 'Wolf McNally' => 'wolf@wolfmcnally.com' }
     s.source           = { :git => 'https://github.com/wolfmcnally/WolfLorem.git', :tag => s.version.to_s }
 
-    s.source_files = 'WolfLorem/Classes/**/*'
+    s.source_files = 'Sources/WolfLorem/**/*'
 
     s.swift_version = '4.2'
 

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "WolfNumerics",
+        "repositoryURL": "https://github.com/wolfmcnally/WolfNumerics",
+        "state": {
+          "branch": null,
+          "revision": "60752d0dfca058ee2f84f4d254069196b2b975e7",
+          "version": "3.0.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

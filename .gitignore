@@ -22,5 +22,8 @@ DerivedData
 # Bundler
 .bundle
 
+# Swift Package Manager
+.build
+
 Carthage/Build
 Pods/
