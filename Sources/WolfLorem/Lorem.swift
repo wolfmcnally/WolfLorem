@@ -46,7 +46,7 @@ public class Lorem {
     }
 
     public static func words(_ count: Int, emojisFrac: Frac = 0) -> String {
-        return compose({ word(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
+        return compose(word(emojisFrac: emojisFrac), count: count, middleSeparator: .space)
     }
 
     private static let sentenceEnds: [Separator] = [
@@ -64,21 +64,21 @@ public class Lorem {
     public static func sentence(emojisFrac: Frac = 0) -> String {
         let numberOfWordsInSentence = Int.random(in: 4...16)
         let capitalizeFirstLetterDecorator: Decorator = { $0.capitalizedFirstCharacter() }
-        return compose({ word(emojisFrac: emojisFrac) }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
+        return compose(word(emojisFrac: emojisFrac), count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
     }
 
     public static func shortSentence(emojisFrac: Frac = 0) -> String {
         let numberOfWordsInSentence = Int.random(in: 3...8)
         let capitalizeFirstLetterDecorator: Decorator = { $0.capitalizedFirstCharacter() }
-        return compose({ word(emojisFrac: emojisFrac) }, count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
+        return compose(word(emojisFrac: emojisFrac), count: numberOfWordsInSentence, middleSeparator: .space, endSeparator: sentenceEnd(), decorator: capitalizeFirstLetterDecorator)
     }
 
     public static func sentences(_ count: Int, emojisFrac: Frac = 0) -> String {
-        return compose({ sentence(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
+        return compose(sentence(emojisFrac: emojisFrac), count: count, middleSeparator: .space)
     }
 
     public static func shortSentences(_ count: Int, emojisFrac: Frac = 0) -> String {
-        return compose({ shortSentence(emojisFrac: emojisFrac) }, count: count, middleSeparator: .space)
+        return compose(shortSentence(emojisFrac: emojisFrac), count: count, middleSeparator: .space)
     }
 
     public static func paragraph(emojisFrac: Frac = 0) -> String {
@@ -87,19 +87,19 @@ public class Lorem {
     }
 
     public static func paragraphs(_ count: Int, emojisFrac: Frac = 0) -> String {
-        return compose({ paragraph(emojisFrac: emojisFrac) }, count: count, middleSeparator: .newLine)
+        return compose(paragraph(emojisFrac: emojisFrac), count: count, middleSeparator: .newLine)
     }
 
     public static func title() -> String {
         let numberOfWordsInTitle = Int.random(in: 2...7)
         let capitalizeStringDecorator: Decorator = { $0.capitalized }
-        return compose({ word() }, count: numberOfWordsInTitle, middleSeparator: .space, decorator: capitalizeStringDecorator)
+        return compose(word(), count: numberOfWordsInTitle, middleSeparator: .space, decorator: capitalizeStringDecorator)
     }
 
     public static func shortTitle() -> String {
         let numberOfWordsInTitle = Int.random(in: 2...3)
         let capitalizeStringDecorator: Decorator = { $0.capitalized }
-        return compose({ word() }, count: numberOfWordsInTitle, middleSeparator: .space, decorator: capitalizeStringDecorator)
+        return compose(word(), count: numberOfWordsInTitle, middleSeparator: .space, decorator: capitalizeStringDecorator)
     }
 
     public static func emoji() -> String {
@@ -107,7 +107,7 @@ public class Lorem {
     }
 
     public static func emojis(_ count: Int) -> String {
-        return compose({ emoji() }, count: count, middleSeparator: .none)
+        return compose(emoji(), count: count, middleSeparator: .none)
     }
 
     public static func organizationSuffix() -> String {
@@ -288,7 +288,7 @@ public class Lorem {
         case newLine = "\n"
     }
 
-    private static func compose(_ provider: () -> String, count: Int, middleSeparator: Separator, endSeparator: Separator = .none, decorator: Decorator? = nil) -> String {
+    private static func compose(_ provider: @autoclosure () -> String, count: Int, middleSeparator: Separator, endSeparator: Separator = .none, decorator: Decorator? = nil) -> String {
         var composedString = ""
 
         for index in 0..<count {
@@ -398,5 +398,16 @@ public class Lorem {
 
     public static func longCodeName() -> String {
         return [adjective(), color(), animal()].joined(separator: " ")
+    }
+
+    /// https://github.com/satoshilabs/slips/blob/master/slip-0039/wordlist.txt
+    private static let slip39words = "academic acid acoustic actor actress adapt adjust admit adult advance advice aerobic afraid again agent agree airport aisle alarm album alcohol alert alien alpha already also alter always amazing amount amused analyst anchor anger angry animal answer antenna antique anxiety anything apart april arctic arena argue armed armor army artefact artist artwork aspect atom auction august aunt average avocado avoid awake away awesome awful awkward axis bean beauty because become bedroom behave believe below bench benefit best betray between beyond bicycle bike biology bird birth black blame blanket bleak blind blossom boat body bomb border bounce bowl bracket brain brand brave bread bridge brief broccoli broken brother brown brush budget build bulb burden burger burn busy buyer cactus camera campaign canal canyon capital captain carbon career carpet casino castle catalog catch category cause ceiling cement census chair chaos chat cheap check choice chuckle churn circle city civil claim clap clarify clean clerk clever click client climb clinic clog closet cloth clown club clump cluster coach coconut code coil column comfort comic coral corn cost country cousin cover coyote cradle craft crane crater crazy credit crew cricket crime crisp critic cross crouch crowd crucial cruel cruise crunch crystal cube culture cupboard curious curve cycle daily damage dance daughter death debris decade december decision decline decorate decrease degree delay deliver denial dentist deny depart depend describe desert design desk despair destroy detail detect device devote diamond diary diesel diet dilemma direct disagree dismiss display distance divert divorce doctor dolphin domain dose double dozen dragon drama drastic dream dress drift drink drum duck dumb dune dwarf dynamic eager eagle early earn earth easy echo ecology edge edit educate elbow elder electric elegant element elephant elevator elite else embrace emerge employ empty endless endorse enemy energy enforce engage enjoy enlist enroll entire entry envelope episode equal erase erode erosion erupt escape estate eternal event evidence evil evolve exact example excess exchange exclude excuse execute exercise exhaust exile exist exotic expand expect expire explain express extend extra eyebrow face facility faculty faint faith false family famous fancy fantasy fashion fatal fatigue favorite fiber fiction field file filter final find finish firm fiscal fish fitness flag flavor flip float flower fluid foam focus fold force forest forget fork fortune forward fragile frame frequent fresh friend fringe frog frozen fruit fuel function furnace fury gadget galaxy garden garlic gasp gate gauge general genius genre gentle gesture glad glance glare glide glimpse glue goal golden grape grass gravity great grid grocery group grow grunt guard guess guilt guitar half hamster hand harbor harvest hawk hazard head heart heavy hedgehog help hero hockey holiday hospital hotel hour huge human hundred hurdle hurt husband hybrid idea identify idle image imitate impact improve impulse inch income increase index industry infant inflict inform inhale inherit injury inmate insane insect inside install intact invite involve island isolate item ivory jacket jaguar jealous jeans jewel join joke judge juice jump jungle junk ketchup kick kingdom kitchen kite kiwi knife lady lamp large laugh laundry lava lawn lawsuit layer leader leaf league leave lecture legal legend leisure lemon length lens level liberty library license lift likely limit line living lizard loan lobster local lock loud love lucky lunar lunch luxury lyrics machine magazine magnet maid make manage mandate mango mansion manual maple marble march mask master material matrix maximum meaning measure media melt member menu mercy mesh metal method midnight minute miracle misery mistake mixed mixture mobile model modify moment more morning motor mouse movie much mule multiply muscle museum music must myself mystery myth naive name napkin neck negative neglect neither nephew nerve network news nice nuclear number obey object oblige obscure obtain ocean october odor often olive olympic orange orbit ordinary organ orient ostrich other oven owner oyster package pact painting pair palace panda panic panther paper parade parent park party path patrol pave payment peace peanut peasant pelican penalty pencil perfect period permit photo phrase physical piano picnic picture piece pilot pink pipe pistol pitch planet plastic plate play please pledge pluck plug plunge practice predict prepare present pretty primary priority prison private prize problem produce profit program promote prosper proud public pulse pumpkin pupil purchase purpose push pyramid quantum quarter question quick quiz quote rack radar radio raise ranch rapid rare raven razor ready real rebel recall receive recipe recycle regret regular reject relax rely remind remove render repair repeat replace rescue resemble resist response retreat reunion review reward rhythm rich rifle ring risk rival river road robot robust rocket romance rotate rough royal rude runway rural sadness salad salon salt satisfy satoshi sauce sausage scale scan scatter scene school science scissors scorpion scout scrap screen script scrub search seat second secret security segment select senior sense sentence service seven shadow shaft share shed sheriff shock shoe short shoulder shrimp sibling siege silent silver similar simple siren sister size skate sketch skin skirt skull slender slice slogan slow slush small smart smile smoke snake social soda soft soldier solve someone soul sound source spawn special spell spend sphere spider spike spirit split spray spread spring squeeze stadium staff stage stamp stand station stay steak step stereo stick still sting stomach stove strike strong style sugar suit sunset super surface survey swallow swap swear swift swim switch sword symbol symptom system tackle tail talent target taxi teach team tenant text thank theater theme theory throw thunder ticket tilt timber time tiny tired title toast today together toilet token tomato torch tornado tortoise total tourist tower town trade traffic transfer trash travel tray trend trial trick trim trouble true trumpet trust twelve twenty twice twin twist type typical ugly umbrella unaware uncle uncover under unfair unfold unhappy unique universe unknown until upgrade upset urge usage used useless usual vacant vacuum vague valid valve vanish vast vault velvet vendor venture verify very veteran vibrant vicious victory video view vintage violin virus visa visit vital vivid voice volcano volume vote voyage wage wagon wait walnut warfare warm warning wash waste water wealth weapon weather weird welcome western whale wheat when where width wild window winter wire wisdom wolf woman world worth wrap wreck wrestle wrist write yard young zebra".components(separatedBy: " ")
+
+    public static func slip39word() -> String {
+        return slip39words.randomChoice()
+    }
+
+    public static func recoveryWords(_ count: Int) -> String {
+            return compose(slip39word(), count: count, middleSeparator: .space)
     }
 }
