@@ -1,4 +1,4 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 import PackageDescription
 
 let package = Package(
@@ -9,7 +9,7 @@ let package = Package(
             targets: ["WolfLorem"]),
         ],
     dependencies: [
-        .package(url: "https://github.com/wolfmcnally/WolfNumerics", from: "3.0.1"),
+        .package(url: "https://github.com/wolfmcnally/WolfNumerics", from: "4.0.0"),
     ],
     targets: [
         .target(
