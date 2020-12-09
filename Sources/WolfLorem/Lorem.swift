@@ -274,6 +274,14 @@ public class Lorem {
         }
     }
 
+    public static func data(_ count: Int) -> Data {
+        var result = Data()
+        for _ in 0 ..< count {
+            result.append(UInt8.random(in: 0...255))
+        }
+        return result
+    }
+
     // ======================================================= //
     // MARK: - Private
     // ======================================================= //
