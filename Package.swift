@@ -9,15 +9,13 @@ let package = Package(
     products: [
         .library(
             name: "WolfLorem",
-            type: .dynamic,
             targets: ["WolfLorem"]),
         ],
     dependencies: [
-        .package(url: "https://github.com/wolfmcnally/WolfNumerics", from: "4.0.0"),
     ],
     targets: [
         .target(
-            name: "WolfLorem",
-            dependencies: ["WolfNumerics"])
+            name: "WolfLorem"
+          )
         ]
 )

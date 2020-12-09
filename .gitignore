@@ -24,5 +24,5 @@ DerivedData
 .swiftpm
 Package.resolved
 
-Carthage/Build
-Pods/
+.build
+*.xcodeproj
