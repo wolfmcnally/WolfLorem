@@ -41,7 +41,7 @@ public class Lorem {
     
     public static func word(emojisFrac: Double = 0) -> String {
         var rng: RandomNumberGenerator = SystemRandomNumberGenerator()
-        return word(using: &rng)
+        return word(emojisFrac: emojisFrac, using: &rng)
     }
     
     public static func word<R: RandomNumberGenerator>(emojisFrac: Double = 0, using rng: inout R) -> String {
