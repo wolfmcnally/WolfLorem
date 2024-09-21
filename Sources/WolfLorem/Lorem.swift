@@ -524,7 +524,7 @@ public class Lorem {
 
     private static let femaleFirstNames = "Abigail Adrianna Agnes Alexa Alexandra Alexis Allyson Alma Alondra Alyson Ana Angela Angelina Aniya Annika Antoinette Beth Bianca Bonita Bonnie Brooklynn Caitlyn Camila Cara Carla Carley Carly Carmen Cathleen Chris Ciara Cindy Constance Courtney Cynthia Danielle Deana Dora Doris Dulce Elaine Elise Eliza Emely Emma Eoin Esmeralda Fatima Francesca Freya Gayle Geraldine Giselle Gretchen Harriet Ida Inley Isabel Isabelle Jackie Jacquelyn Jadyn Jamie Janet Jean Joann Jordyn Josephine Judith Justice Kailey Kaleigh Katherine Katie Kaylin Kellie Kelly Kristi Kyla Kyleigh Kyra Laila LaTonya Leslie Lexi Liliana Lori Lorie Lucinda Lynette Madeline Maggie Maisie Makenzie Margarita Marianne Marsha Marybeth Melinda Michelle Mitzi Mya Nadia Nia Nika Noel Noelle Paola Peggy Penny Perla Piper Ruby Rylee Sadie Sheryl Shirley Sienna Skye Skylar Skyler Sonja Staci Stephanie Summer Sydney Tammie Tonia Tracy Tricia Trisha Uriel Vanessa Xena Yvonne Zoe".components(separatedBy: " ")
 
-    private static var firstNames: [String] = {
+    private static let firstNames: [String] = {
         var a = Lorem.maleFirstNames
         a.append(contentsOf: Lorem.femaleFirstNames)
         return a
